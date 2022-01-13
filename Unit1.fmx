@@ -1,0 +1,191 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 480
+  ClientWidth = 640
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 0
+  object Rectangle3: TRectangle
+    Align = Client
+    Size.Width = 640.000000000000000000
+    Size.Height = 480.000000000000000000
+    Size.PlatformDefault = False
+    object ColorAnimation1: TColorAnimation
+      Duration = 0.200000002980232200
+      PropertyName = 'Fill.Color'
+      StartValue = claSpringgreen
+      StopValue = claLightgray
+    end
+  end
+  object LayoutWorld: TLayout
+    Align = Client
+    Size.Width = 640.000000000000000000
+    Size.Height = 480.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    OnMouseDown = LayoutWorldMouseDown
+    object LayoutBird: TLayout
+      Position.X = 72.000000000000000000
+      Position.Y = 192.000000000000000000
+      Scale.X = 0.300000011920929000
+      Scale.Y = 0.300000011920929000
+      TabOrder = 0
+      OnPainting = LayoutBirdPainting
+      object Ellipse1: TEllipse
+        Fill.Color = claBrown
+        HitTest = False
+        Position.X = 15.000000000000000000
+        Size.Width = 121.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        object Ellipse2: TEllipse
+          Fill.Color = claBurlywood
+          Locked = True
+          HitTest = False
+          Position.X = 63.000000000000000000
+          Position.Y = -24.000000000000000000
+          Size.Width = 66.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          object Circle1: TCircle
+            Fill.Color = claBisque
+            Locked = True
+            HitTest = False
+            Position.X = -24.000000000000000000
+            Size.Width = 50.000000000000000000
+            Size.Height = 50.000000000000000000
+            Size.PlatformDefault = False
+            object Circle2: TCircle
+              Fill.Color = claBlack
+              Locked = True
+              HitTest = False
+              Position.X = 17.000000000000000000
+              Position.Y = 17.000000000000000000
+              Size.Width = 25.000000000000000000
+              Size.Height = 25.000000000000000000
+              Size.PlatformDefault = False
+            end
+          end
+        end
+        object Pie1: TPie
+          Position.X = 8.000000000000000000
+          Position.Y = -17.000000000000000000
+          RotationAngle = 170.000000000000000000
+          Size.Width = 121.000000000000000000
+          Size.Height = 81.000000000000000000
+          Size.PlatformDefault = False
+          EndAngle = -90.000000000000000000
+          object FloatAnimation1: TFloatAnimation
+            AnimationType = InOut
+            AutoReverse = True
+            Duration = 0.200000002980232200
+            Interpolation = Sinusoidal
+            Loop = True
+            OnProcess = FloatAnimation1Process
+            PropertyName = 'EndAngle'
+            StartValue = 90.000000000000000000
+            StopValue = -90.000000000000000000
+          end
+        end
+      end
+      object FloatAnimation2: TFloatAnimation
+        Delay = 0.200000002980232200
+        Duration = 0.500000000000000000
+        PropertyName = 'RotationAngle'
+        StartValue = 0.000000000000000000
+        StartFromCurrent = True
+        StopValue = 100.000000000000000000
+      end
+      object FloatAnimation3: TFloatAnimation
+        Duration = 0.200000002980232200
+        OnFinish = FloatAnimation3Finish
+        PropertyName = 'Position.Y'
+        StartValue = 0.000000000000000000
+        StartFromCurrent = True
+        StopValue = 0.000000000000000000
+      end
+    end
+    object Layout1: TLayout
+      Align = Vertical
+      Position.X = 392.000000000000000000
+      Size.Width = 50.000000000000000000
+      Size.Height = 480.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      object Rectangle1: TRectangle
+        Align = Top
+        Fill.Color = claBlue
+        Locked = True
+        HitTest = False
+        Size.Width = 50.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object Rectangle2: TRectangle
+        Align = Bottom
+        Fill.Color = claBlue
+        Locked = True
+        HitTest = False
+        Position.Y = 430.000000000000000000
+        Size.Width = 50.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+      end
+    end
+  end
+  object LayoutMessage: TLayout
+    Align = Client
+    Size.Width = 640.000000000000000000
+    Size.Height = 480.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object MaxPointLabel: TLabel
+      Align = Top
+      AutoSize = True
+      StyledSettings = [Family]
+      Margins.Top = 10.000000000000000000
+      Margins.Bottom = 10.000000000000000000
+      Position.Y = 10.000000000000000000
+      Size.Width = 640.000000000000000000
+      Size.Height = 34.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Size = 25.000000000000000000
+      TextSettings.Font.Style = [fsBold]
+      TextSettings.FontColor = claChocolate
+      TextSettings.HorzAlign = Center
+      TextSettings.WordWrap = False
+      Text = 'MaxPointLabel'
+    end
+    object PointLabel: TLabel
+      Align = Bottom
+      AutoSize = True
+      StyledSettings = [Family]
+      Margins.Top = 10.000000000000000000
+      Margins.Bottom = 10.000000000000000000
+      Position.Y = 436.000000000000000000
+      Size.Width = 640.000000000000000000
+      Size.Height = 34.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Size = 25.000000000000000000
+      TextSettings.Font.Style = [fsBold]
+      TextSettings.FontColor = claChocolate
+      TextSettings.HorzAlign = Center
+      TextSettings.WordWrap = False
+      Text = 'Label1'
+    end
+    object StartButton1: TButton
+      Position.X = 248.000000000000000000
+      Position.Y = 168.000000000000000000
+      Size.Width = 169.000000000000000000
+      Size.Height = 113.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      Text = 'StartButton1'
+      OnClick = StartButton1Click
+    end
+  end
+end
